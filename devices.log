@@ -1,0 +1,11 @@
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2018-09-22 07:43 CEST
+Nmap scan report for 192.168.1.69
+Host is up (0.010s latency).
+MAC Address: 48:F7:C0:8E:A1:55 (Technicolor CH USA)
+Nmap scan report for _gateway (192.168.1.254)
+Host is up (0.013s latency).
+MAC Address: 4C:8B:30:5A:47:A8 (Actiontec Electronics)
+Nmap scan report for thoughtPad (192.168.1.66)
+Host is up.
+Nmap done: 256 IP addresses (3 hosts up) scanned in 7.87 seconds
