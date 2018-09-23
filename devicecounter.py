@@ -12,9 +12,11 @@ os.system("clear")
 
 print("Scanning for devices, should take 5-60s.")
 
+os.system("echo \"The password is to run the nmap command only.\"")
+
 ##MAKE SURE TO UPDATE THE IP ADDRESS IF YOU WANT TO RUN THIS ON A DIFFERENT WIFI NETWORK
 #REPLACE ONLY THE &s     &&&.&&&.&                    
-os.system("sudo nmap -sn 192.168.0.0/24 > devices.log 2>> err.log")
+os.system("sudo nmap -sn 192.168.0.0/24 > devices.log")
 
 
 device_list = []
@@ -22,13 +24,16 @@ device_list = []
 #format: <device manufacturer> : <count>
 manu_count = {}
 
+#The time when the scan started
+init_time = ""
+
 print("Scan completed successfully.\nOpening file devices.log...")
-with open("devices.log") as d:
-    init_time = ""
+with open("devices.log", "r") as d:
     for line in d.readlines():
         if "Starting Nmap" in line:
             init_time = line[45:]
             print("Scan started at: {}".format(init_time))
+            os.system("TIME={}".format(init_time))
         elif "Nmap scan report for " in line:            
             rec = False
             ipaddr = ""
@@ -81,6 +86,12 @@ with open("devices.log") as d:
 
 
             device_list.append([ipaddr, manu, macaddr])
+
+            try:
+                manu_count[manu] += 1
+            except Exception:
+                manu_count[manu] = 1
+
         
         elif "Nmap done:" in line:
             hostcount = ""
@@ -94,7 +105,13 @@ with open("devices.log") as d:
             hostcount = str(int(hostcount) - 1)
             print("{} devices found".format(hostcount))
 
+    os.system("cp devices.log devices.log.backup; > devices.log")
 
-for device in device_list:
-    print("\nIP Address: {}\nManufacturer: {}\nMAC Address: {}".format(device[0], device[1], device[2]))                    
+print(manu_count)
+
+with open("devicehistory.csv", "a+") as csv:
+    csv.write("\n{},{},{}".format(init_time[:-1], str(int(len(device_list))-1), (manu_count)))
+    
+    #for device in device_list:
+        #print("\nIP Address: {}\nManufacturer: {}\nMAC Address: {}".format(device[0], device[1], device[2]))                    
 
