@@ -14,7 +14,7 @@ print("Scanning for devices, should take 5-60s.")
 
 ##MAKE SURE TO UPDATE THE IP ADDRESS IF YOU WANT TO RUN THIS ON A DIFFERENT WIFI NETWORK
 #REPLACE ONLY THE &s     &&&.&&&.&                    
-os.system("sudo nmap -sn 192.168.1.0/24 > devices.log 2>> err.log")
+os.system("sudo nmap -sn 192.168.0.0/24 > devices.log 2>> err.log")
 
 
 device_list = []
