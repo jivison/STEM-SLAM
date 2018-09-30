@@ -1,8 +1,4 @@
 import os
-import re
-
-#Just for aesthetic
-os.system("clear")
 
 #Sample format
 
@@ -12,12 +8,11 @@ os.system("clear")
 
 print("Scanning for devices, should take 5-60s.")
 
-os.system("echo \"The password is to run the nmap command only.\"")
+os.system("echo \"If prompted for a password, it is only used to run the nmap command.\"")
 
 ##MAKE SURE TO UPDATE THE IP ADDRESS IF YOU WANT TO RUN THIS ON A DIFFERENT WIFI NETWORK
 #REPLACE ONLY THE &s     &&&.&&&.&                    
-os.system("sudo nmap -sn 192.168.0.0/24 > devices.log")
-
+os.system("sudo nmap -sn 192.168.1.0/24 > devices.log")
 
 device_list = []
 
@@ -33,7 +28,6 @@ with open("devices.log", "r") as d:
         if "Starting Nmap" in line:
             init_time = line[45:]
             print("Scan started at: {}".format(init_time))
-            os.system("TIME={}".format(init_time))
         elif "Nmap scan report for " in line:            
             rec = False
             ipaddr = ""
@@ -103,15 +97,9 @@ with open("devices.log", "r") as d:
                     hostcount = character
                     rec = False
             hostcount = str(int(hostcount) - 1)
-            print("{} devices found".format(hostcount))
 
     os.system("cp devices.log devices.log.backup; > devices.log")
-
-print(manu_count)
 
 with open("devicehistory.csv", "a+") as csv:
     csv.write("\n{},{},{}".format(init_time[:-1], str(int(len(device_list))-1), (manu_count)))
     
-    #for device in device_list:
-        #print("\nIP Address: {}\nManufacturer: {}\nMAC Address: {}".format(device[0], device[1], device[2]))                    
-

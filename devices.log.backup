@@ -1,29 +1,17 @@
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2018-09-23 09:33 CEST
-Nmap scan report for _gateway (192.168.0.1)
-Host is up (0.0054s latency).
-MAC Address: C8:FB:26:49:3C:18 (Cisco Spvtg)
-Nmap scan report for 192.168.0.10
-Host is up (0.29s latency).
-MAC Address: F8:28:19:F2:CC:60 (Liteon Technology)
-Nmap scan report for 192.168.0.11
-Host is up (0.12s latency).
-MAC Address: 40:4E:36:20:32:E9 (HTC)
-Nmap scan report for 192.168.0.13
-Host is up (0.010s latency).
-MAC Address: AC:1F:74:46:C8:42 (Apple)
-Nmap scan report for 192.168.0.14
-Host is up (0.020s latency).
+Starting Nmap 7.60 ( https://nmap.org ) at 2018-10-01 00:45 CEST
+Nmap scan report for 192.168.1.66
+Host is up (0.13s latency).
 MAC Address: 94:65:2D:C7:9C:A0 (OnePlus Technology (Shenzhen))
-Nmap scan report for 192.168.0.15
+Nmap scan report for 192.168.1.69
+Host is up (0.014s latency).
+MAC Address: 48:F7:C0:8E:A1:55 (Technicolor CH USA)
+Nmap scan report for 192.168.1.70
 Host is up (0.10s latency).
-MAC Address: D8:6C:63:62:6D:34 (Google)
-Nmap scan report for 192.168.0.16
-Host is up (0.022s latency).
-MAC Address: 2C:33:7A:80:EC:2E (Hon Hai Precision Ind.)
-Nmap scan report for 192.168.0.17
-Host is up (0.013s latency).
-MAC Address: 8C:85:90:18:C9:5D (Apple)
-Nmap scan report for thoughtPad (192.168.0.19)
+MAC Address: 88:E9:FE:80:ED:1C (Unknown)
+Nmap scan report for _gateway (192.168.1.254)
+Host is up (0.044s latency).
+MAC Address: 4C:8B:30:5A:47:A8 (Actiontec Electronics)
+Nmap scan report for thoughtPad (192.168.1.65)
 Host is up.
-Nmap done: 256 IP addresses (9 hosts up) scanned in 6.46 seconds
+Nmap done: 256 IP addresses (5 hosts up) scanned in 12.87 seconds
