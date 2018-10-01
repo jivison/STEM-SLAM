@@ -1,0 +1,401 @@
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2018-10-01 20:23 CEST
+Nmap scan report for 10.32.228.0
+Host is up (0.0045s latency).
+MAC Address: 00:56:CD:91:5E:C8 (Apple)
+Nmap scan report for 10.32.228.1
+Host is up (0.0032s latency).
+MAC Address: 5C:70:A3:49:11:F6 (LG Electronics (Mobile Communications))
+Nmap scan report for 10.32.228.2
+Host is up (0.0032s latency).
+MAC Address: 48:60:5F:69:07:A0 (Unknown)
+Nmap scan report for 10.32.228.4
+Host is up (0.0040s latency).
+MAC Address: 2C:6F:C9:2D:6C:17 (Hon Hai Precision Ind.)
+Nmap scan report for 10.32.228.5
+Host is up (0.0040s latency).
+MAC Address: 88:E9:FE:9D:53:2A (Unknown)
+Nmap scan report for 10.32.228.6
+Host is up (0.0040s latency).
+MAC Address: 00:56:CD:70:F8:12 (Apple)
+Nmap scan report for 10.32.228.7
+Host is up (0.0040s latency).
+MAC Address: 34:BB:26:7E:50:FF (Motorola Mobility, a Lenovo Company)
+Nmap scan report for 10.32.228.8
+Host is up (0.0040s latency).
+MAC Address: 50:82:D5:DC:86:CD (Apple)
+Nmap scan report for 10.32.228.9
+Host is up (0.0040s latency).
+MAC Address: EC:D0:9F:AC:79:D9 (Xiaomi Communications)
+Nmap scan report for 10.32.228.10
+Host is up (0.0040s latency).
+MAC Address: 3C:A1:0D:FF:73:C6 (Samsung Electronics)
+Nmap scan report for 10.32.228.11
+Host is up (0.073s latency).
+MAC Address: 48:E9:F1:26:C6:E4 (Apple)
+Nmap scan report for 10.32.228.13
+Host is up (-0.083s latency).
+MAC Address: 64:70:33:1D:5D:F1 (Unknown)
+Nmap scan report for 10.32.228.14
+Host is up (-0.083s latency).
+MAC Address: 34:36:3B:79:33:00 (Apple)
+Nmap scan report for 10.32.228.15
+Host is up (-0.082s latency).
+MAC Address: CC:44:63:38:04:13 (Apple)
+Nmap scan report for 10.32.228.16
+Host is up (-0.082s latency).
+MAC Address: A4:93:3F:68:5F:93 (Unknown)
+Nmap scan report for 10.32.228.17
+Host is up (-0.082s latency).
+MAC Address: 48:60:5F:02:1A:26 (Unknown)
+Nmap scan report for 10.32.228.20
+Host is up (-0.079s latency).
+MAC Address: 44:91:60:C4:04:27 (Unknown)
+Nmap scan report for 10.32.228.21
+Host is up (-0.079s latency).
+MAC Address: F0:98:9D:71:0E:8B (Apple)
+Nmap scan report for 10.32.228.22
+Host is up (-0.079s latency).
+MAC Address: 94:E9:6A:0F:77:3F (Apple)
+Nmap scan report for 10.32.228.23
+Host is up (-0.079s latency).
+MAC Address: 44:00:10:5F:D9:DF (Apple)
+Nmap scan report for 10.32.228.26
+Host is up (-0.079s latency).
+MAC Address: A0:56:F3:AA:79:B6 (Unknown)
+Nmap scan report for 10.32.228.27
+Host is up (-0.079s latency).
+MAC Address: B0:70:2D:62:B1:EB (Apple)
+Nmap scan report for 10.32.228.30
+Host is up (-0.079s latency).
+MAC Address: 94:65:2D:B1:E5:BB (OnePlus Technology (Shenzhen))
+Nmap scan report for 10.32.228.31
+Host is up (0.0049s latency).
+MAC Address: 60:30:D4:A5:28:58 (Unknown)
+Nmap scan report for 10.32.228.33
+Host is up (-0.088s latency).
+MAC Address: 2C:6F:C9:2D:8A:E3 (Hon Hai Precision Ind.)
+Nmap scan report for 10.32.228.35
+Host is up (0.026s latency).
+MAC Address: 78:4F:43:A5:4A:3D (Apple)
+Nmap scan report for 10.32.228.36
+Host is up (0.041s latency).
+MAC Address: 58:40:4E:28:02:EF (Apple)
+Nmap scan report for 10.32.228.38
+Host is up (0.042s latency).
+MAC Address: DC:56:E7:78:5B:DE (Unknown)
+Nmap scan report for 10.32.228.39
+Host is up (0.042s latency).
+MAC Address: C8:14:51:31:96:43 (Huawei Technologies)
+Nmap scan report for 10.32.228.40
+Host is up (0.042s latency).
+MAC Address: 8C:F5:A3:73:7E:1C (Samsung Electro-mechanics(thailand))
+Nmap scan report for 10.32.228.41
+Host is up (0.042s latency).
+MAC Address: 28:E7:CF:B7:F7:07 (Apple)
+Nmap scan report for 10.32.228.42
+Host is up (0.042s latency).
+MAC Address: 64:70:33:BB:3A:B0 (Unknown)
+Nmap scan report for 10.32.228.45
+Host is up (-0.062s latency).
+MAC Address: AC:1F:74:45:4A:34 (Apple)
+Nmap scan report for 10.32.228.46
+Host is up (-0.062s latency).
+MAC Address: 30:35:AD:CD:ED:FC (Apple)
+Nmap scan report for 10.32.228.48
+Host is up (-0.061s latency).
+MAC Address: 58:E2:8F:86:45:B3 (Apple)
+Nmap scan report for 10.32.228.49
+Host is up (-0.061s latency).
+MAC Address: 0C:3E:9F:E0:70:76 (Apple)
+Nmap scan report for 10.32.228.50
+Host is up (-0.061s latency).
+MAC Address: D0:81:7A:76:F3:D0 (Unknown)
+Nmap scan report for 10.32.228.52
+Host is up (-0.060s latency).
+MAC Address: 90:B1:1C:72:75:9F (Dell)
+Nmap scan report for 10.32.228.53
+Host is up (-0.060s latency).
+MAC Address: B0:E1:7E:0B:B9:27 (Huawei Technologies)
+Nmap scan report for 10.32.228.55
+Host is up (0.010s latency).
+MAC Address: E4:98:D6:8D:78:39 (Apple)
+Nmap scan report for 10.32.228.56
+Host is up (0.010s latency).
+MAC Address: A0:4E:A7:E6:44:6F (Apple)
+Nmap scan report for 10.32.228.58
+Host is up (0.011s latency).
+MAC Address: C0:B6:58:3B:FD:CC (Unknown)
+Nmap scan report for 10.32.228.60
+Host is up (-0.10s latency).
+MAC Address: 74:9E:AF:3B:FD:B3 (Unknown)
+Nmap scan report for 10.32.228.61
+Host is up (-0.10s latency).
+MAC Address: E0:33:8E:54:FA:15 (Unknown)
+Nmap scan report for 10.32.228.63
+Host is up (-0.10s latency).
+MAC Address: 34:36:3B:79:C8:88 (Apple)
+Nmap scan report for 10.32.228.64
+Host is up (-0.10s latency).
+MAC Address: 34:36:3B:7C:EE:34 (Apple)
+Nmap scan report for 10.32.228.66
+Host is up (0.011s latency).
+MAC Address: 80:B0:3D:53:FE:46 (Apple)
+Nmap scan report for 10.32.228.67
+Host is up (-0.10s latency).
+MAC Address: 60:F4:45:AA:42:00 (Apple)
+Nmap scan report for 10.32.228.68
+Host is up (-0.10s latency).
+MAC Address: 78:88:6D:DF:A5:ED (Apple)
+Nmap scan report for 10.32.228.69
+Host is up (-0.10s latency).
+MAC Address: 0C:70:4A:95:E1:96 (Unknown)
+Nmap scan report for 10.32.228.70
+Host is up (-0.10s latency).
+MAC Address: C4:13:E2:47:1F:C0 (Aerohive Networks)
+Nmap scan report for 10.32.228.71
+Host is up (-0.10s latency).
+MAC Address: C4:13:E2:47:6A:C0 (Aerohive Networks)
+Nmap scan report for 10.32.228.72
+Host is up (-0.10s latency).
+MAC Address: 2C:59:8A:71:C4:CB (LG Electronics (Mobile Communications))
+Nmap scan report for 10.32.228.73
+Host is up (0.0054s latency).
+MAC Address: C4:13:E2:47:27:40 (Aerohive Networks)
+Nmap scan report for 10.32.228.74
+Host is up (0.0067s latency).
+MAC Address: C4:13:E2:47:37:80 (Aerohive Networks)
+Nmap scan report for 10.32.228.75
+Host is up (0.0071s latency).
+MAC Address: C4:13:E2:47:2B:80 (Aerohive Networks)
+Nmap scan report for 10.32.228.76
+Host is up (0.011s latency).
+MAC Address: 2C:F0:A2:BE:E5:97 (Apple)
+Nmap scan report for 10.32.228.77
+Host is up (0.0069s latency).
+MAC Address: C4:13:E2:47:13:C0 (Aerohive Networks)
+Nmap scan report for 10.32.228.79
+Host is up (0.0040s latency).
+MAC Address: 94:65:2D:C7:9C:A0 (OnePlus Technology (Shenzhen))
+Nmap scan report for 10.32.228.81
+Host is up (0.0027s latency).
+MAC Address: C4:13:E2:47:2D:80 (Aerohive Networks)
+Nmap scan report for 10.32.228.83
+Host is up (0.010s latency).
+MAC Address: 90:68:C3:01:F5:14 (Motorola Mobility, a Lenovo Company)
+Nmap scan report for 10.32.228.84
+Host is up (-0.058s latency).
+MAC Address: 00:56:CD:0F:DA:49 (Apple)
+Nmap scan report for 10.32.228.85
+Host is up (-0.058s latency).
+MAC Address: 20:6E:9C:4B:87:74 (Samsung Electronics)
+Nmap scan report for 10.32.228.86
+Host is up (0.010s latency).
+MAC Address: C4:13:E2:47:29:00 (Aerohive Networks)
+Nmap scan report for 10.32.228.87
+Host is up (0.010s latency).
+MAC Address: 2C:FD:A1:81:AC:5C (Unknown)
+Nmap scan report for 10.32.228.88
+Host is up (0.010s latency).
+MAC Address: C4:13:E2:46:90:00 (Aerohive Networks)
+Nmap scan report for 10.32.228.89
+Host is up (0.010s latency).
+MAC Address: A8:88:08:2A:E2:F3 (Apple)
+Nmap scan report for 10.32.228.90
+Host is up (0.010s latency).
+MAC Address: C4:13:E2:47:16:00 (Aerohive Networks)
+Nmap scan report for 10.32.228.91
+Host is up (0.010s latency).
+MAC Address: 4C:57:CA:E0:F5:5D (Apple)
+Nmap scan report for 10.32.228.92
+Host is up (0.0039s latency).
+MAC Address: C4:13:E2:47:15:00 (Aerohive Networks)
+Nmap scan report for 10.32.228.94
+Host is up (0.010s latency).
+MAC Address: C4:13:E2:47:30:40 (Aerohive Networks)
+Nmap scan report for 10.32.228.95
+Host is up (0.0024s latency).
+MAC Address: 44:04:44:30:17:C6 (Guangdong Oppo Mobile Telecommunications)
+Nmap scan report for 10.32.228.96
+Host is up (0.0048s latency).
+MAC Address: 74:9E:AF:50:1A:F3 (Unknown)
+Nmap scan report for 10.32.228.98
+Host is up (0.0047s latency).
+MAC Address: C0:33:5E:0A:F1:2B (Microsoft)
+Nmap scan report for 10.32.228.100
+Host is up (0.0047s latency).
+MAC Address: 70:3E:AC:78:6C:A1 (Apple)
+Nmap scan report for 10.32.228.101
+Host is up (-0.098s latency).
+MAC Address: C4:13:E2:47:97:80 (Aerohive Networks)
+Nmap scan report for 10.32.228.103
+Host is up (0.38s latency).
+MAC Address: 74:9E:AF:2D:81:56 (Unknown)
+Nmap scan report for 10.32.228.104
+Host is up (-0.097s latency).
+MAC Address: 64:20:0C:2F:DB:D4 (Apple)
+Nmap scan report for 10.32.228.107
+Host is up (-0.096s latency).
+MAC Address: C4:13:E2:47:9D:40 (Aerohive Networks)
+Nmap scan report for 10.32.228.108
+Host is up (-0.096s latency).
+MAC Address: F4:09:D8:A5:38:05 (Samsung Electro-mechanics(thailand))
+Nmap scan report for 10.32.228.109
+Host is up (-0.096s latency).
+MAC Address: A8:5C:2C:7D:C0:FA (Apple)
+Nmap scan report for 10.32.228.110
+Host is up (-0.096s latency).
+MAC Address: 90:B0:ED:B0:20:DA (Apple)
+Nmap scan report for 10.32.228.111
+Host is up (0.0039s latency).
+MAC Address: 20:68:9D:BC:08:B7 (Liteon Technology)
+Nmap scan report for 10.32.228.112
+Host is up (0.0047s latency).
+MAC Address: F8:16:54:E4:58:BD (Intel Corporate)
+Nmap scan report for 10.32.228.115
+Host is up (0.0027s latency).
+MAC Address: C0:B6:58:2F:C2:CC (Unknown)
+Nmap scan report for 10.32.228.117
+Host is up (0.0036s latency).
+MAC Address: B8:CA:3A:A8:07:F9 (Dell)
+Nmap scan report for 10.32.228.118
+Host is up (0.0042s latency).
+MAC Address: 70:4D:7B:09:45:D9 (Asustek Computer)
+Nmap scan report for 10.32.228.119
+Host is up (0.0042s latency).
+MAC Address: 28:CF:E9:EE:5C:50 (Apple)
+Nmap scan report for 10.32.228.120
+Host is up (0.0050s latency).
+MAC Address: F0:79:60:B9:6B:39 (Apple)
+Nmap scan report for 10.32.228.121
+Host is up (0.0050s latency).
+MAC Address: B0:E1:7E:72:95:2F (Huawei Technologies)
+Nmap scan report for 10.32.228.122
+Host is up (0.0050s latency).
+MAC Address: 4C:74:BF:6D:56:54 (Apple)
+Nmap scan report for 10.32.228.123
+Host is up (0.0049s latency).
+MAC Address: B8:D7:AF:80:88:AE (Murata Manufacturing)
+Nmap scan report for 10.32.228.124
+Host is up (0.0052s latency).
+MAC Address: 9C:B6:D0:EF:55:E5 (Rivet Networks)
+Nmap scan report for 10.32.228.126
+Host is up (0.0068s latency).
+MAC Address: 70:56:81:B4:FE:55 (Apple)
+Nmap scan report for 10.32.228.127
+Host is up (-0.099s latency).
+MAC Address: 30:07:4D:86:D3:65 (Samsung Electro-mechanics(thailand))
+Nmap scan report for 10.32.228.128
+Host is up (-0.099s latency).
+MAC Address: BC:6C:21:B3:0C:63 (Apple)
+Nmap scan report for 10.32.228.129
+Host is up (-0.098s latency).
+MAC Address: 00:56:CD:D3:B1:CD (Apple)
+Nmap scan report for 10.32.228.130
+Host is up (0.058s latency).
+MAC Address: 40:9C:28:A1:36:0B (Apple)
+Nmap scan report for 10.32.228.131
+Host is up (0.058s latency).
+MAC Address: 90:B1:1C:7E:72:AB (Dell)
+Nmap scan report for 10.32.228.132
+Host is up (0.065s latency).
+MAC Address: 58:C5:CB:CB:71:11 (Samsung Electronics)
+Nmap scan report for 10.32.228.134
+Host is up (0.065s latency).
+MAC Address: B8:CA:3A:8D:78:18 (Dell)
+Nmap scan report for 10.32.228.137
+Host is up (0.0068s latency).
+MAC Address: 98:9E:63:5C:28:10 (Apple)
+Nmap scan report for 10.32.228.138
+Host is up (0.0068s latency).
+MAC Address: 74:9E:AF:0C:9E:07 (Unknown)
+Nmap scan report for 10.32.228.141
+Host is up (0.0040s latency).
+MAC Address: 8C:85:90:37:CA:A1 (Apple)
+Nmap scan report for 10.32.228.158
+Host is up (-0.092s latency).
+MAC Address: A0:56:F3:77:79:EE (Unknown)
+Nmap scan report for 10.32.228.159
+Host is up (0.22s latency).
+MAC Address: 1C:9E:46:82:62:4E (Apple)
+Nmap scan report for 10.32.228.171
+Host is up (-0.092s latency).
+MAC Address: 84:29:99:E0:38:AD (Apple)
+Nmap scan report for 10.32.228.173
+Host is up (-0.057s latency).
+MAC Address: 34:C0:59:48:B3:FD (Apple)
+Nmap scan report for 10.32.228.180
+Host is up (-0.092s latency).
+MAC Address: 58:7F:57:69:63:FB (Apple)
+Nmap scan report for 10.32.228.181
+Host is up (-0.092s latency).
+MAC Address: 40:CB:C0:1A:34:36 (Unknown)
+Nmap scan report for 10.32.228.182
+Host is up (0.26s latency).
+MAC Address: 6C:96:CF:AE:BB:45 (Apple)
+Nmap scan report for 10.32.228.191
+Host is up (-0.092s latency).
+MAC Address: 78:D7:5F:6F:6B:BA (Apple)
+Nmap scan report for 10.32.228.193
+Host is up (0.0068s latency).
+MAC Address: 10:F1:F2:43:03:03 (Unknown)
+Nmap scan report for 10.32.228.198
+Host is up (-0.095s latency).
+MAC Address: A4:D1:8C:DA:36:02 (Apple)
+Nmap scan report for 10.32.228.204
+Host is up (-0.089s latency).
+MAC Address: AC:E4:B5:0F:CF:EB (Apple)
+Nmap scan report for 10.32.228.205
+Host is up (-0.092s latency).
+MAC Address: 2C:F0:A2:D1:2C:33 (Apple)
+Nmap scan report for 10.32.228.208
+Host is up (-0.092s latency).
+MAC Address: C4:13:E2:62:3E:80 (Aerohive Networks)
+Nmap scan report for 10.32.228.211
+Host is up (-0.089s latency).
+MAC Address: 40:6C:8F:59:F6:50 (Apple)
+Nmap scan report for 10.32.228.216
+Host is up (-0.089s latency).
+MAC Address: 40:6C:8F:1C:61:DA (Apple)
+Nmap scan report for 10.32.228.217
+Host is up (-0.089s latency).
+MAC Address: 58:82:A8:93:06:18 (Microsoft)
+Nmap scan report for 10.32.228.219
+Host is up (-0.089s latency).
+MAC Address: 34:36:3B:79:1A:12 (Apple)
+Nmap scan report for 10.32.228.224
+Host is up (-0.089s latency).
+MAC Address: 00:24:E8:36:AD:59 (Dell)
+Nmap scan report for 10.32.228.228
+Host is up (-0.089s latency).
+MAC Address: A8:BE:27:D0:AF:0E (Apple)
+Nmap scan report for 10.32.228.229
+Host is up (-0.19s latency).
+MAC Address: B8:27:EB:50:38:87 (Raspberry Pi Foundation)
+Nmap scan report for 10.32.228.231
+Host is up (-0.096s latency).
+MAC Address: B8:27:EB:6A:13:03 (Raspberry Pi Foundation)
+Nmap scan report for 10.32.228.238
+Host is up (0.0046s latency).
+MAC Address: C4:61:8B:9F:F5:9A (Unknown)
+Nmap scan report for 10.32.228.241
+Host is up (0.0033s latency).
+MAC Address: 6C:AB:31:AA:5A:3D (Apple)
+Nmap scan report for 10.32.228.243
+Host is up (0.0033s latency).
+MAC Address: 88:6B:6E:06:1E:DE (Apple)
+Nmap scan report for 10.32.228.244
+Host is up (0.0046s latency).
+MAC Address: 00:56:CD:03:CE:12 (Apple)
+Nmap scan report for 10.32.228.248
+Host is up (0.0045s latency).
+MAC Address: A0:4E:A7:E8:D1:58 (Apple)
+Nmap scan report for 10.32.228.251
+Host is up (0.0049s latency).
+MAC Address: D0:31:69:BE:F0:9F (Samsung Electronics)
+Nmap scan report for 10.32.228.254
+Host is up (0.0049s latency).
+MAC Address: 10:41:7F:80:7F:F8 (Apple)
+Nmap scan report for thoughtPad (10.32.228.190)
+Host is up.
+Nmap done: 256 IP addresses (133 hosts up) scanned in 63.44 seconds
