@@ -1,1 +1,15 @@
-TIME,# OF DEVICES,MANUFACTURER LIST,AVG PING TIME
+TIME,# OF DEVICES,MANUFACTURER LIST,AVG PING TIME,HOST PING TIME,UPLOAD SPEED,DOWNLOAD SPEED
+18-10-02 06:09 CEST,3,{OnePlus Technology Shenzhen:1|Technicolor CH USA:1|Unknown:1|Actiontec Electronics:1},11.869ms,8.864,6.8,27.3
+18-10-02 06:13 CEST,3,{OnePlus Technology Shenzhen:1|Technicolor CH USA:1|Unknown:1|Actiontec Electronics:1},11.570ms,9.171,7.3,26.4
+18-10-02 06:17 CEST,3,{OnePlus Technology Shenzhen:1|Technicolor CH USA:1|Unknown:1|Actiontec Electronics:1},20.067ms,10.072,6.3,12.3
+18-10-02 06:21 CEST,1,{Technicolor CH USA:1|Unknown:1},479.443ms,20.415,6.0,0.5
+18-10-02 06:25 CEST,3,{OnePlus Technology Shenzhen:1|Technicolor CH USA:1|Unknown:1|Actiontec Electronics:1},53.738ms,9.588,7.0,25.6
+18-10-02 06:29 CEST,1,{Technicolor CH USA:1|Actiontec Electronics:1},13.539ms,8.368,6.9,24.3
+18-10-02 06:33 CEST,3,{OnePlus Technology Shenzhen:1|Technicolor CH USA:1|Unknown:1|Actiontec Electronics:1},11.599ms,9.981,6.8,26.4
+18-10-02 06:37 CEST,3,{OnePlus Technology Shenzhen:1|Murata Manufacturing:1|Technicolor CH USA:1|Actiontec Electronics:1},12.423ms,9.11,7.1,21.3
+18-10-02 06:41 CEST,2,{OnePlus Technology Shenzhen:1|Technicolor CH USA:1|Actiontec Electronics:1},10.904ms,8.323,7.3,26.6
+18-10-02 06:45 CEST,2,{Technicolor CH USA:1|Unknown:1|Actiontec Electronics:1},13.450ms,9.31,7.0,23.6
+18-10-02 06:49 CEST,3,{OnePlus Technology Shenzhen:1|Technicolor CH USA:1|Unknown:1|Actiontec Electronics:1},11.263ms,10.522,6.6,18.4
+18-10-02 06:53 CEST,3,{OnePlus Technology Shenzhen:1|Technicolor CH USA:1|Unknown:1|Actiontec Electronics:1},10.797ms,17.377,7.7,17.3
+18-10-02 06:57 CEST,2,{OnePlus Technology Shenzhen:1|Technicolor CH USA:1|Actiontec Electronics:1},14.909ms,11.165,7.0,12.5
+18-10-02 07:06 CEST,3,{OnePlus Technology Shenzhen:1|Technicolor CH USA:1|Microsoft:1},29.713ms,11.932,6.5,13.8

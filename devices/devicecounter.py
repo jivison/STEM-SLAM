@@ -12,7 +12,7 @@ os.system("echo \"If prompted for a password, it is only used to run the nmap co
 
 ##MAKE SURE TO UPDATE THE IP ADDRESS IF YOU WANT TO RUN THIS ON A DIFFERENT WIFI NETWORK
 #REPLACE ONLY THE &s     &&&.&&&.&                    
-os.system("sudo nmap -sn 10.32.228.0/24 > devices.log")
+os.system("sudo nmap -sn 192.168.1.0/24 > devices.log")
 
 #format: [<ip address>, <manufacturer>, <mac address>]
 device_list = []
@@ -126,7 +126,9 @@ def fix_manu_count():
     output = output[:-1] + "}"
     return output
 
-#Appends all of the nmap data to the csv file
-with open("../networkdetails.csv", "a+") as csv:
-    csv.write("\n{},{},{}".format(init_time[:-1], str(int(len(device_list))-1), fix_manu_count()))
+
+if len(device_list) >= 0:
+    #Appends all of the nmap data to the csv file
+    with open("../networkdetails.csv", "a+") as csv:
+        csv.write("\n{},{},{}".format(init_time[:-1], str(int(len(device_list))), fix_manu_count()))
     

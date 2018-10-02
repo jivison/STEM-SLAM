@@ -1,14 +1,16 @@
 #! /bin/bash/
-
 while true; do
 
     TIME_OF_SCAN=`date +'%-M'`
     printf "################\nCounting devices\n################\n\n"
     
-    cd devices; python3 devicecounter.py
+    cd /home/john/slam/devices; python3 devicecounter.py
     
     printf "##########################\nGathering ping information\n##########################\n\n"
-    cd ../ping; python3 pingfinder.py
+    cd /home/john/slam/ping; python3 pingfinder.py
+
+    printf "#############\nSpeedtest-ing\n#############\n\n"
+    cd /home/john/slam/network-speed; python3 networkspeed.py
 
     echo "networkdetails.csv successfully updated, waiting 2 minutes"
     
