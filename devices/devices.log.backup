@@ -1,14 +1,2 @@
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2018-10-02 07:06 CEST
-Nmap scan report for 192.168.1.66
-Host is up (0.010s latency).
-MAC Address: 94:65:2D:C7:9C:A0 (OnePlus Technology (Shenzhen))
-Nmap scan report for 192.168.1.69
-Host is up (0.023s latency).
-MAC Address: 48:F7:C0:8E:A1:55 (Technicolor CH USA)
-Nmap scan report for 192.168.1.104
-Host is up (-0.068s latency).
-MAC Address: 60:45:BD:9D:D2:52 (Microsoft)
-Nmap scan report for thoughtPad (192.168.1.65)
-Host is up.
-Nmap done: 256 IP addresses (4 hosts up) scanned in 4.85 seconds
+Starting Nmap 7.60 ( https://nmap.org ) at 2018-10-03 11:40 CEST

@@ -1,4 +1,4 @@
-#! /bin/bash/
+#!/bin/bash
 while true; do
 
     TIME_OF_SCAN=`date +'%-M'`
