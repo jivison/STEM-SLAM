@@ -47,5 +47,5 @@ os.system("cp ping.log ping.log.backup; > ping.log")
 print("Average ping time over 10 packets: {}".format(avg_ping_time))
 
 #Appends all of the nmap data to the csv file
-with open("../storage.yaml", "a+") as yaml:
-    yaml.write("\nAverage Ping: {}".format(avg_ping_time))
+with open("../networkdetails.csv", "a+") as csv:
+    csv.write(",{}".format(avg_ping_time))

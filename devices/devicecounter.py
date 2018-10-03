@@ -128,6 +128,6 @@ def fix_manu_count():
 
 
 #Appends all of the nmap data to the csv file
-with open("../storage.yaml", "a+") as yaml:
-    yaml.write("Time: {}\nDevice Count: {}\nManu List: {}\n".format(init_time[:-1], str(int(len(device_list))), fix_manu_count()))
+with open("../networkdetails.csv", "a+") as csv:
+    csv.write("\n{},{},{}".format(init_time[:-1], str(int(len(device_list))), fix_manu_count()))
   
