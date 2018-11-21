@@ -1,1 +1,9 @@
+# Because I use vsocde this shows ip
 .vscode/
+
+# Temp files that are annoying
+*.log
+*.log.backup
+
+# Old code
+.old/
