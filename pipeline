@@ -1,0 +1,30 @@
+This is how the code flows (from file to file)
+
+/controllers/continuous.sh
+        |
+        |
+        |
+        V
+each /sensors/<sensor>/main.py   -----writes to----->    <sensordatatype>.json
+        |
+        |
+        |
+        V
+/controllers/data_transfer/send_data.sh   ------sends /data/json/ to------>    10.32.230.37:/home/stem-server/SLAM_Data/
+                                                                                        |
+                                                                                        |
+                                                                                        |
+                                                                                        |
+        |--------------------------------------------------------------------------------
+        |
+        |
+        V
+/visualization/visualize.py
+        |
+        |
+     creates
+        |
+        |
+        |
+        V
+pretty graphs @ http://127.0.0.1:8050/
