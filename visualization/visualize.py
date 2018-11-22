@@ -3,6 +3,12 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import plotly.graph_objs as go
+
+import pandas as pd
+
+database_file = "../data/database.csv"
+df = pd.read_csv(database_file).tail(7)
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
@@ -13,7 +19,32 @@ colors = {
     'text' : '#7FDBFF'
 }
 
-def generate_generic_graph(data, id, title):
+def generate_graph_from_data_frame(dataframe, id, title, desired_data_types):
+    
+    data = []
+
+    for data_type in desired_data_types:
+        data.append(go.Scatter(
+            {'y' : dataframe[data_type]}
+        ))
+
+    return dcc.Graph(
+        id=id,
+        figure={
+            'data' : data,
+            'layout': {
+                'title': title,
+                'plot_bgcolor' : colors['background'], 
+                'paper_bgcolor' : colors['background'],
+                'font' : {
+                    'color' : colors['text']
+                },
+                'xaxis' : dict(title="Minutes since last scan")
+            }
+        }
+    )
+
+def generate_graph_from_raw_data(data, id, title):
     return dcc.Graph(
         id=id, 
         figure={
@@ -42,33 +73,13 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
         'color' : colors['text']
     }),
 
-    generate_generic_graph([
-        {'y' : [0.5, 2.4, 1.4, 1, 3, 2, 1], 'type' : 'scatter', 'name' : 'Upload Speed'}, 
-        {'y' : [0.6, 2.6, 1.2, 0.6, 2, 1, 0.1], 'type' : 'line', 'name' : "Download Speed"}
-    ], "test-generate2", "I also hope this works"),
+    generate_graph_from_data_frame(df, "particles", "Methane, CO2, and Radon Levels", [
+        "methane_levels", "radon_levels", "c02_levels"
+        ]),
 
-    generate_generic_graph([
-                {'x': [1, 2, 3], 'y': [4, 1, 2], 'type': 'bar', 'name': 'SF'},
-                {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': u'Montréal'},
-            ], "test-generate", "I hope this works"),
-
-    dcc.Graph(
-        id="example-graph2",
-        figure={
-            'data': [
-                {'x': [1, 2, 4], 'y': [4, 1, 2], 'type': 'bar', 'name': 'Vancouver'},
-                {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': 'Winnipeg'},
-            ],
-            'layout': {
-                'title': 'So are these!',
-                'plot_bgcolor' : colors['background'], 
-                'paper_bgcolor' : colors['background'],
-                'font' : {
-                    'color' : colors['text']
-                }
-            }
-        }
-    )
+    generate_graph_from_data_frame(df, "network", "Upload and Download Speeds", [
+        "download_speed", "upload_speed"
+    ])
 
 ])
 
