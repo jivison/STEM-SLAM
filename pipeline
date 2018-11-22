@@ -19,7 +19,17 @@ each /sensors/<sensor>/main.py   -----writes to----->    /data/json/<sensordatat
         |
         |
         V
+/data/add_json_to_csv.py    ----writes json data------>     /data/database.csv
+                                                                    |
+                                                                    |
+                                                                    |
+        ----------------sends latest few rows------------------------
+        |
+        |
+        |
+        V
 /visualization/visualize.py
+        |
         |
         |
      creates
