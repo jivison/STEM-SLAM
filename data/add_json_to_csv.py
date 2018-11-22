@@ -1,13 +1,45 @@
+
+# THE JSON FILES HAVE TO STAY IN THE SAME ORDER THAT THEY APPEAR IN THE CSV FILE HEADERS!!!!
+# IT WILL NOT WORK IF YOU CHANGE THE ORDER
+
 import json
 import csv
 
-json_path = "devicecount|ping|upload_speed|upload_speed|download_speed.json"
-csv_path = "database.csv"
+import os
 
-with open(json_path, "w+") as jsonfile:
-    with open(csv_path, "a+") as csvfile:
+data = {}
 
-        fieldnames = ["device_count", "avg_ping", "upload_speed", "download_speed"]
-        reader = csv.DictReader(csvfile, fieldnames)
-        for row in reader:
-            print(row)
+processed_sensors = []
+
+for file in os.listdir("json/"):
+    if not file.endswith(".json"):
+        print(f'WARNING: Non JSON file in json/ directory ({file})')
+    else:
+        with open(f'json/{file}', "r") as jsonfile:
+
+            j = json.load(jsonfile)
+
+            processed_sensors.append(j['sensor'])
+
+            data.update(j['data'])
+
+print(f'\nProcessed sensors: {processed_sensors}')
+
+fieldnames = []
+
+with open("database.csv", "a+") as csvfile:
+
+    reader = csv.DictReader(csvfile)
+
+    for key in data:
+        fieldnames.append(key)
+
+
+    print("The csv headers are:\n")
+    for fieldname in fieldnames:
+        print(fieldname, end=",")
+    print("\n")
+
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    writer.writerow(data)
