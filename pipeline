@@ -5,7 +5,7 @@ This is how the code flows (from file to file)
         |
         |
         V
-each /sensors/<sensor>/main.py   -----writes to----->    <sensordatatype>.json
+each /sensors/<sensor>/main.py   -----writes to----->    /data/json/<sensordatatype>.json
         |
         |
         |
