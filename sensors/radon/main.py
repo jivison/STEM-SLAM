@@ -1,9 +1,10 @@
 import json
+import random
 
-sensor = "Sample Sensor" # Whatever the sensor is called
+sensor = "Radon Sensor" # Whatever the sensor is called
 
 # replace spaces with underscores and keep it all lowercase. This will make things more consistent with file names 
-data_type = "sample_data"
+data_type = "radon_levels"
 print("Gathering {} from sensor {}\n".format(data_type, sensor))
 
 
@@ -12,7 +13,7 @@ def run():
 
     # Must return the value like the following:
 
-    sample_data = 100
+    sample_data = random.randint(300, 900)
 
     return str(sample_data)
 
@@ -27,11 +28,12 @@ data = {
     'sensor' : sensor,
 
     'data' : {
+        # Change singular_data_point to your data type, eg. device_count, methane_levels
         data_type : run(), 
     },
 
     # Change this to the appropriate units
-    'units' : 'units'
+    'units' : 'ppm'
 }
 
 # '../' points to the parent directory. Make sure to update this path if it should need changing

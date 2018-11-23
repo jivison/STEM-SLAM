@@ -4,7 +4,7 @@ import networkspeed
 import pingfinder
 import devicecounter
 
-ip = "192.168.1"
+ip = "192.168.0"
 
 sensor = "Raspberry Pi" # Whatever the sensor is called
 
@@ -36,10 +36,10 @@ data = {
     'sensor' : sensor,
 
     'data': {
-        'device_count'   :  run('device_count') + " devices",
-        'avg_ping'       :  run('ping') + " ms", 
-        'upload_speed'   :  run('uploadspeed') + " mbps",
-        'download_speed' :  run('downloadspeed') + " mbps"
+        'device_count'   :  run('device_count'),
+        'avg_ping'       :  run('ping'), 
+        'upload_speed'   :  run('uploadspeed'),
+        'download_speed' :  run('downloadspeed')
     }
 
 }

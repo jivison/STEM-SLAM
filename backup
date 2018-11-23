@@ -15,23 +15,17 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 colors = {
-    'background' : "black",
+    'background' : "navy",
     'text' : 'white'
 }
 
-def generate_graph_from_data_frame(dataframe, id, title, desired_data_types, series_options, yaxis_title, xaxis_title):
+def generate_graph_from_data_frame(dataframe, id, title, desired_data_types):
     
     data = []
 
     for data_type in desired_data_types:
         data.append(go.Scatter(
-            {'y' : dataframe[data_type][::-1], 
-            'x' : [0, 1, 2, 3, 4, 5, 6], 
-            'name' : series_options[data_type]["series_name"],
-            'line' : {
-                'color' : series_options[data_type]['color']
-            }
-            },
+            {'y' : dataframe[data_type], 'x' : [0, 1, 2, 3, 4, 5, 6], 'name' : data_type},
         ))
 
     return dcc.Graph(
@@ -45,8 +39,7 @@ def generate_graph_from_data_frame(dataframe, id, title, desired_data_types, ser
                 'font' : {
                     'color' : colors['text']
                 },
-                'xaxis' : dict(title=xaxis_title, autorange="reversed"),
-                'yaxis' : dict(title=yaxis_title)
+                'xaxis' : dict(title="Minutes since last scan", autorange="reversed")
             }
         }
     )
@@ -80,27 +73,12 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
         'color' : colors['text']
     }),
 
-    generate_graph_from_data_frame(df, "particles", "Methane, CO, and Radon Levels", [
-        "CO_levels", "methane_levels", "radon_levels"], 
-        {
-            "CO_levels" : {
-                "series_name" : "Carbon Monoxide Levels",
-                "color" : "#fffa00"
-            },
-            "methane_levels" : {
-                "series_name" : "Methane Levels",
-                "color" : "#ff8c00"
-            },
-            "radon_levels" : {
-                "series_name" : "Radon Levels",
-                "color" : "#ff270f"
-            }
-        },
-        "Concentration (ppm)",
-        "Time since last scan (minutes)"
-    )
+    generate_graph_from_data_frame(df, "particles", "Methane Levels", [
+        "CO_levels", "methane_levels", "radon_levels"
+        ]),
+
+
 ])
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
