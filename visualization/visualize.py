@@ -7,10 +7,21 @@ import plotly.graph_objs as go
 
 import pandas as pd
 
+# My custom themes. Feel free to add more if you would like
+import custom_themes as themes
+
+t = themes.Themes()
+
 database_file = "../data/database.csv"
 df = pd.read_csv(database_file).tail(7)
 
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
+    {
+        'href' : 'visualize.css',
+        'rel' : 'stylesheet',
+        'crossorigin' : 'anonymous'
+    }
+]
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
@@ -85,20 +96,79 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
         {
             "CO_levels" : {
                 "series_name" : "Carbon Monoxide Levels",
-                "color" : "#fffa00"
+                "color" : t("sunset")[0]
             },
             "methane_levels" : {
                 "series_name" : "Methane Levels",
-                "color" : "#ff8c00"
+                "color" : t("sunset")[2]
             },
             "radon_levels" : {
                 "series_name" : "Radon Levels",
-                "color" : "#ff270f"
+                "color" : t("sunset")[3]
+            }
+        },
+        "Concentration (ppm)",
+        "Time since last scan (minutes)"
+    ),
+
+    generate_graph_from_data_frame(df, "particles2", "Methane, CO, and Radon Levels", [
+        "CO_levels", "methane_levels", "radon_levels"], 
+        {
+            "CO_levels" : {
+                "series_name" : "Carbon Monoxide Levels",
+                "color" : t("vaporwave")[2]
+            },
+            "methane_levels" : {
+                "series_name" : "Methane Levels",
+                "color" : t("vaporwave")[3]
+            },
+            "radon_levels" : {
+                "series_name" : "Radon Levels",
+                "color" : t("vaporwave")[0]
+            }
+        },
+        "Concentration (ppm)",
+        "Time since last scan (minutes)"
+    ),
+        generate_graph_from_data_frame(df, "particles3", "Methane, CO, and Radon Levels", [
+        "CO_levels", "methane_levels", "radon_levels"], 
+        {
+            "CO_levels" : {
+                "series_name" : "Carbon Monoxide Levels",
+                "color" : t('forest')[2]
+            },
+            "methane_levels" : {
+                "series_name" : "Methane Levels",
+                "color" : t('forest')[1]
+            },
+            "radon_levels" : {
+                "series_name" : "Radon Levels",
+                "color" : t('forest')[0]
+            }
+        },
+        "Concentration (ppm)",
+        "Time since last scan (minutes)"
+    ),
+        generate_graph_from_data_frame(df, "particles4", "Methane, CO, and Radon Levels", [
+        "CO_levels", "methane_levels", "radon_levels"], 
+        {
+            "CO_levels" : {
+                "series_name" : "Carbon Monoxide Levels",
+                "color" : t('purple')[2]
+            },
+            "methane_levels" : {
+                "series_name" : "Methane Levels",
+                "color" : t('purple')[1]
+            },
+            "radon_levels" : {
+                "series_name" : "Radon Levels",
+                "color" : t('purple')[3]
             }
         },
         "Concentration (ppm)",
         "Time since last scan (minutes)"
     )
+
 ])
 
 if __name__ == '__main__':

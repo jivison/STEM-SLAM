@@ -1,0 +1,12 @@
+html {
+    background-color: black
+}
+
+h1 {
+    color: dodgerblue !important;
+}
+
+#particles, #particles2, #particles3, #particles4 {
+    width: 50%;
+    float: left;
+}
