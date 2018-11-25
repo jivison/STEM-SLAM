@@ -6,7 +6,7 @@ import devicecounter
 
 ip = "192.168.0"
 
-sensor = "Raspberry Pi" # Whatever the sensor is called
+sensor = "Network Sensor" # Whatever the sensor is called
 
 # replace spaces with underscores and keep it all lowercase. This will make things more consistent with file names 
 data_type = "networkdetails"

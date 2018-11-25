@@ -28,13 +28,10 @@ data = {
 
     'data' : {
         data_type : run(), 
-    },
-
-    # Change this to the appropriate units
-    'units' : 'units'
+    }
 }
 
-# '../' points to the parent directory. Make sure to update this path if it should need changing
+# Make sure to update this path if it should need changing
 with open("/home/mattecatte/STEM-SLAM/data/json/{}.json".format(data_type), "w+") as outfile:
     json.dump(data, outfile)
 

@@ -3,10 +3,10 @@ html {
 }
 
 h1 {
-    color: dodgerblue !important;
+    color: white !important;
 }
 
-#particles, #particles2, #particles3, #particles4 {
+#upload_speed, #download_speed, #device_count, #avg_ping, #CO_levels, #methane_levels {
     width: 50%;
     float: left;
 }

@@ -12,8 +12,24 @@ import custom_themes as themes
 
 t = themes.Themes()
 
+# Time that continuous.sh waits between scans
+
+interval = 600
+minute_interval = interval / 60
+
+
+# Number of x values on a graph
+number_of_entries = 16
+
+def create_x_list():
+    output = []
+    for x in range(number_of_entries):
+        output.append(x * minute_interval)
+    return output
+
+
 database_file = "../data/database.csv"
-df = pd.read_csv(database_file).tail(7)
+df = pd.read_csv(database_file).tail(number_of_entries)
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
     {
@@ -37,10 +53,11 @@ def generate_graph_from_data_frame(dataframe, id, title, desired_data_types, ser
     for data_type in desired_data_types:
         data.append(go.Scatter(
             {'y' : dataframe[data_type][::-1], 
-            'x' : [0, 1, 2, 3, 4, 5, 6], 
+            'x' : create_x_list(), 
             'name' : series_options[data_type]["series_name"],
             'line' : {
-                'color' : series_options[data_type]['color']
+                'color' : series_options[data_type]['color'],
+                'shape' : 'spline'
             }
             },
         ))
@@ -91,85 +108,99 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
         'color' : colors['text']
     }),
 
-    generate_graph_from_data_frame(df, "particles", "Methane, CO, and Radon Levels", [
-        "CO_levels", "methane_levels", "radon_levels"], 
-        {
-            "CO_levels" : {
-                "series_name" : "Carbon Monoxide Levels",
-                "color" : t("sunset")[0]
-            },
-            "methane_levels" : {
-                "series_name" : "Methane Levels",
-                "color" : t("sunset")[2]
-            },
-            "radon_levels" : {
-                "series_name" : "Radon Levels",
-                "color" : t("sunset")[3]
-            }
-        },
-        "Concentration (ppm)",
-        "Time since last scan (minutes)"
-    ),
-
-    generate_graph_from_data_frame(df, "particles2", "Methane, CO, and Radon Levels", [
-        "CO_levels", "methane_levels", "radon_levels"], 
-        {
-            "CO_levels" : {
-                "series_name" : "Carbon Monoxide Levels",
-                "color" : t("vaporwave")[2]
-            },
-            "methane_levels" : {
-                "series_name" : "Methane Levels",
-                "color" : t("vaporwave")[3]
-            },
-            "radon_levels" : {
-                "series_name" : "Radon Levels",
+    generate_graph_from_data_frame(df, "upload_speed", "Upload Speed", 
+    ["upload_speed"],
+    {
+            "upload_speed" : {
+                "series_name" : "Upload Speed",
                 "color" : t("vaporwave")[0]
             }
         },
-        "Concentration (ppm)",
+        "Speed (mbps)",
         "Time since last scan (minutes)"
-    ),
-        generate_graph_from_data_frame(df, "particles3", "Methane, CO, and Radon Levels", [
-        "CO_levels", "methane_levels", "radon_levels"], 
-        {
-            "CO_levels" : {
-                "series_name" : "Carbon Monoxide Levels",
-                "color" : t('forest')[2]
-            },
-            "methane_levels" : {
-                "series_name" : "Methane Levels",
-                "color" : t('forest')[1]
-            },
-            "radon_levels" : {
-                "series_name" : "Radon Levels",
-                "color" : t('forest')[0]
+    ), # End graph
+
+    generate_graph_from_data_frame(df, "download_speed", "Download Speed", 
+    ["download_speed"],
+    {
+            "download_speed" : {
+                "series_name" : "Download Speed",
+                "color" : t("vaporwave")[5]
             }
         },
-        "Concentration (ppm)",
+        "Speed (mbps)",
         "Time since last scan (minutes)"
-    ),
-        generate_graph_from_data_frame(df, "particles4", "Methane, CO, and Radon Levels", [
-        "CO_levels", "methane_levels", "radon_levels"], 
-        {
-            "CO_levels" : {
-                "series_name" : "Carbon Monoxide Levels",
-                "color" : t('purple')[2]
-            },
-            "methane_levels" : {
-                "series_name" : "Methane Levels",
-                "color" : t('purple')[1]
-            },
-            "radon_levels" : {
-                "series_name" : "Radon Levels",
-                "color" : t('purple')[3]
+    ), # End graph
+
+    generate_graph_from_data_frame(df, "device_count", "Device Count", 
+    ["device_count"],
+    {
+            "device_count" : {
+                "series_name" : "Number of Devices Connected to Network",
+                "color" : t("vaporwave")[2]
             }
         },
+        "# of Devices",
+        "Time since last scan (minutes)"
+    ), # End graph
+
+    generate_graph_from_data_frame(df, "avg_ping", "Average ping to 8.8.8.8",
+    ['avg_ping'],
+    {
+            "avg_ping" : {
+                "series_name" : "Average Ping",
+                "color" : t('vaporwave')[4]
+            }
+    },
+    "Latency (ms)",
+    "Time since last scan (minutes)"
+    ), # End graph
+
+    generate_graph_from_data_frame(df, "CO_levels", "Carbon Monoxide Levels", 
+    ["CO_levels"],
+    {
+        "CO_levels" : {
+            "series_name" : "Carbon Monoxide Levels",
+            "color" : t('vaporwave')[1]
+        },
+    },
+        "Concentration (ppm)",
+        "Time since last scan (minutes)"
+    ), # End graph
+
+    generate_graph_from_data_frame(df, "methane_levels", "Methane Levels", 
+    ["methane_levels"],
+    {
+        "methane_levels" : {
+            "series_name" : "Methane Levels",
+            "color" : t('vaporwave')[3]
+        },
+    },
         "Concentration (ppm)",
         "Time since last scan (minutes)"
     )
 
-])
+    # Sample graph (copypasta)
+    # generate_graph_from_data_frame(<dataframe>, "<graph ID>", "<graph title>", 
+    # ["<data_type1>", "<data_type2>", ......."<data_typen>"],
+    # {
+    #         "<data_type1>" : {
+    #             "series_name" : "<series name>",
+    #             "color" : "<color>""
+    #         },
+    #         "<data_type2" : {
+    #             "series_name" : "<series name>"
+    #             "color" : "<color>"
+    #         }
+    #     },
+    #     "<y axis title>",
+    #     "<x axis title>"
+    #     ), # End graph
+
+
+
+
+    ])
 
 if __name__ == '__main__':
     app.run_server(debug=True)

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-interval=10 #time interval between scans in seconds
+interval=600 #time interval between scans in seconds
 
 # This doesn't work
 
