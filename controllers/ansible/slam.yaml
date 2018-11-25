@@ -1,0 +1,5 @@
+---
+hosts: raspberries
+tasks:
+  - name: "Collect sensor data" # This both collects and sends data to the server
+    shell: bash ~/sensor/main.py
