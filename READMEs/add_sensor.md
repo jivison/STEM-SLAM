@@ -4,6 +4,8 @@
 
 The first step is to make sure your code is readable by the program. Under ```/controllers/```  you should find ```template.py```, which is a guideline for how your sensor code is set up. It looks like this:
 
+Please, don't edit this file, copy/paste it instead.
+
 ```python
 import json
 
@@ -84,3 +86,12 @@ def run():
 
 ### Step 5:
 Don't worry about changing the path at the bottom under ```with open(...``` 
+
+### Step 6:
+Save your new file under ```main.py```
+
+## Adding your file to the file system
+
+Under ```/sensors/```, add a new folder with the general name of what data you're collecting, eg. ```methane```.
+
+Copy ```main.py``` to this new folder and you should be good to go.
