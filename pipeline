@@ -38,11 +38,10 @@ reloads already running data/visuals/generate_visuals.py(3) <----data is pulled 
 
 TO-DO:
 
-(0): Update files for new file system
-
 (1): Set up ansible file correctly
 
 (2): Adjust jinja2 template and create script to return /just/ the IP address
+    -ip4=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
 
 (3): Add real sensors to program (this includes database.csv, generate_visuals.py, add to sensors/)
 
@@ -51,3 +50,5 @@ TO-DO:
 (?): Process triggers (ansible might already do this)
 
 (5): Make network sensor headless (automate IP address) 
+
+(stretch): create time stamp system

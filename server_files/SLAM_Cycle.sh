@@ -28,14 +28,14 @@ do
 
     # rsync -avz -e 'ssh' $data_dir stem-server@$remotehost:/home/stem-server/SLAM_Data
 
-    cd /home/mattecatte/STEM-SLAM/data/
+    cd /home/mattecatte/STEM-SLAM/server_files/data/
     # Adding data to flat file database
     python3 add_json_to_csv.py
 
     # Jank, don't worry about it
 
-    echo "#comment" >> /home/mattecatte/STEM-SLAM/visualization/visualize.py
-    sed -i '$ d' /home/mattecatte/STEM-SLAM/visualization/visualize.py
+    echo "#comment" >> /home/mattecatte/STEM-SLAM/server_files/data/visuals/generate_visuals.py
+    sed -i '$ d' /home/mattecatte/STEM-SLAM/server_files/data/visuals/generate_visuals.py
 
     echo "Wating $interval seconds"
 

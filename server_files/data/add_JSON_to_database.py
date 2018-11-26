@@ -11,11 +11,11 @@ data = {}
 
 processed_sensors = []
 
-for file in os.listdir("/home/mattecatte/STEM-SLAM/data/json/"):
+for file in os.listdir("/home/mattecatte/STEM-SLAM/server_files/data/json/"):
     if not file.endswith(".json"):
         print(f'WARNING: Non JSON file in json/ directory ({file})')
     else:
-        with open(f'/home/mattecatte/STEM-SLAM/data/json/{file}', "r") as jsonfile:
+        with open(f'/home/mattecatte/STEM-SLAM/server_files/data/json/{file}', "r") as jsonfile:
 
             j = json.load(jsonfile)
 

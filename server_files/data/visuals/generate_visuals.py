@@ -28,7 +28,7 @@ def create_x_list():
     return output
 
 
-database_file = "../data/database.csv"
+database_file = "/home/mattecatte/STEM-SLAM/server_files/data/database.csv"
 df = pd.read_csv(database_file).tail(number_of_entries)
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',

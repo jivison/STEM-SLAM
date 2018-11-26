@@ -1,5 +1,14 @@
 ---
 hosts: raspberries
 tasks:
-  - name: "Collect sensor data" # This both collects and sends data to the server
+  - name: "Collect sensor data" # Gathers sensor data
     shell: bash ~/sensor/main.py
+
+  - name: "Collect IP address" # Collects IP address
+    shell: ip4=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1); echo $ipv4 > ~/sensor_data/ip
+
+  - name: "Send data" # Sends data 
+    shell: bash send_data.sh
+
+  - name: "Generate hosts file with new IP address" # self-explanitory, uses jinja2
+    template: 
