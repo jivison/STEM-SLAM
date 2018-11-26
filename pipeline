@@ -1,40 +1,53 @@
-This is how the code flows (from file to file)
+server_files/SLAM_cycle.sh (4)     <---------------------------------------------------------------------------------------
+            |                                                                                                             |
+            |          ------> generates hosts file using jinja2 template(2)                                              |
+            |          |                            |                                                                     |
+            V          |                            |                                                                     |
+server_files/controls/ansible/slam.yaml(1)          -------> raspberry_files/sensors/<sensor_type>/main.py(3)             |
+            |                                                                   |                                         |
+            |                                                                   |                                         |
+            |                                                                   |                                         |
+            |                                                                   V                                         |
+            |                            sends data-------------    raspberry_files/send_data.sh(X)                       |
+            |                               |                                   |                                         |
+            |                               |                                   |                                         |
+            V                               |                                   |                                         |
+Wait for data triggers from Pis (X?)    <---|---------sends triggers------------                                          |
+            |                               |                                                                             |
+            |                               V                                                                             |
+            |------------>  server_files/data/add_JSON_to_database.py(X)   ----------writes to-----                       |
+                                                                                                  |                       |
+                                                                                     server_files/data/database.csv(3)    |
+reloads already running data/visuals/generate_visuals.py(3) <----data is pulled to----------------|                       |
+            |                      |                                                                                      |
+            |                      |                                                                                      |
+            |                      |                                                                                      |
+            -----------------------|-------------------------------------waits x seconds then------------------------------
+                                   |
+                                   |
+                                   |
+                                   |
+                        generates graphs on
+                                   |
+                                   |
+                                   |
+                                   V
+                        http://127.0.0.1:8050/
 
-/controllers/continuous.sh
-        |
-        |
-        |
-        V
-each /sensors/<sensor>/main.py   -----writes to----->    /data/json/<sensordatatype>.json
-        |
-        |
-        |
-        V
-/controllers/data_transfer/send_data.sh   ------sends /data/json/ to------>    10.32.230.37:/home/stem-server/SLAM_Data/
-                                                                                        |
-                                                                                        |
-                                                                                        |
-                                                                                        |
-        |--------------------------------------------------------------------------------
-        |
-        |
-        V
-/data/add_json_to_csv.py    ----writes json data------>     /data/database.csv
-                                                                    |
-                                                                    |
-                                                                    |
-        ----------------sends latest few rows------------------------
-        |
-        |
-        |
-        V
-/visualization/visualize.py
-        |
-        |
-        |
-     creates
-        |
-        |
-        |
-        V
-pretty graphs @ http://127.0.0.1:8050/
+
+
+TO-DO:
+
+(0): Update files for new file system
+
+(1): Set up ansible file correctly
+
+(2): Adjust jinja2 template and create script to return /just/ the IP address
+
+(3): Add real sensors to program (this includes database.csv, generate_visuals.py, add to sensors/)
+
+(4): Clean up SLAM_cycle.sh and do final testing
+
+(?): Process triggers (ansible might already do this)
+
+(5): Make network sensor headless (automate IP address) 

@@ -4,7 +4,7 @@ def run(target_ip):
 
     ##MAKE SURE TO UPDATE THE IP ADDRESS IF YOU WANT TO RUN THIS ON A DIFFERENT WIFI NETWORK
     #REPLACE ONLY THE &s     &&&.&&&.&                    
-    os.system("sudo nmap -sn {}.0/24 > devices/devices.log".format(target_ip))
+    os.system("nmap -sn {}.0/24 > devices/devices.log".format(target_ip))
 
     #Interpreting the output from the nmap command
     with open("devices/devices.log", "r") as d:
