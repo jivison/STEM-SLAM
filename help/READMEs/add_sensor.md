@@ -118,8 +118,6 @@ This directory will hold the data temporarily.
 
 ## Editing paths and stuff.
 
-A lot of the code is set up to run on my computer with my sensor, so some files need to be changed to work on your pi.
-
 ### send_data.sh
 
 First, edit the file ```~/STEM-SLAM/raspberry_files/send_data.sh```. It should look like this:
