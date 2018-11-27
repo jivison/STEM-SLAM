@@ -1,8 +1,17 @@
 # Adding a sensor to the program
 
+## Getting the code
+
+To grab all the code, type in the terminal (CTRL + ALT + T):
+```bash
+git clone https://github.com/MatteCatte/STEM-SLAM
+```
+This will download all of the files to a directory called ```STEM-SLAM```. You will find everything you need under either ```raspberry_files``` or ```templates```.
+
+
 ## Templating the code
 
-The first step is to make sure your code is readable by the program. Under ```/controllers/```  you should find ```template.py```, which is a guideline for how your sensor code is set up. It looks like this:
+The first step is to make sure your code is readable by the program. Under ```/templates/```  you should find ```template.py```, which is a guideline for how your sensor code is set up. It looks like this:
 
 Please, don't edit this file, copy/paste it instead.
 
@@ -53,7 +62,7 @@ Change ```sensor``` to whatever your sensor is called, eg. ```MQ7```.
 ### Step 2: 
 Change ```data_type``` to the data type your sensor will be producing, examples include: &nbsp;methane_levels, networkdetails, or noise_level.
 
-As per the comment, it cannot contain spaces or special characters. Tr to keep it all lowercase.
+As per the comment, it cannot contain spaces or special characters. Try to keep it all lowercase.
 
 ### Step 3:
 Add your code!
@@ -85,13 +94,50 @@ def run():
 ```
 
 ### Step 5:
-Don't worry about changing the path at the bottom under ```with open(...``` 
+You need to change the path under ```with open():```.
+Change this to ```/home/<hostname>/sensor_data/{}.json```
+
+(Change ```<hostname>``` to your actual hostname, which you can get by typing ```hostname``` in terminal)
 
 ### Step 6:
 Save your new file under ```main.py```
+It will NOT work if called another name.
 
-## Adding your file to the file system
+### Step 7:
+Create a new folder under the home directory called ```sensor``` and move ```main.py``` as well as any other files you may need into this new folder.
 
-Under ```/sensors/```, add a new folder with the general name of what data you're collecting, eg. ```methane```.
+## Setting up the file system on the Pi
 
-Copy ```main.py``` to this new folder and you should be good to go.
+For the program to run correctly, we need to correctly set up the filesystem so the program knows where to find something.
+
+Open terminal and, under the home directory, (type ```cd ``` to get there), create a folder called ```sensor_data``` (```mkdir sensor_data```). 
+
+This directory will hold the data temporarily.
+
+&nbsp;
+
+## Editing paths and stuff.
+
+A lot of the code is set up to run on my computer with my sensor, so some files need to be changed to work on your pi.
+
+### send_data.sh
+
+First, edit the file ```~/STEM-SLAM/raspberry_files/send_data.sh```. It should look like this:
+
+```bash
+#!/bin/bash
+
+data_file="/home/pi/sensor_data/data.json"
+ip="/home/pi/sensor_data/ip"
+
+remotehost="10.32.230.37"
+
+rsync -avz -e 'ssh' $data_file stem-server@$remotehost:/home/stem-server/SLAM_Data/
+rsync -avz -e 'ssh' $ip stem-server@$remotehost:/home/stem-server/raspberryIPs/
+```
+
+Under the variable ```data_file```, change ```data.json``` to ```data_type.json``` where data_type is whatever you put under data_type in the python file.
+
+## Once you are done all of this,
+
+Tell me your IP address (by running ```hostname -I```), and everything should be good to go.
