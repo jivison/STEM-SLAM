@@ -1,0 +1,8 @@
+---
+_hosts:
+   stem_server: {
+   IP: 10.32.230.37,  #Your IP address here 
+   nickname: stem_server,
+   IdentityFile: ~/.ssh/stem_server_rsa, 
+   User: stem-server
+   }

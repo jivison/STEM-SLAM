@@ -11,7 +11,7 @@ read -p "Please enter the target ssh user: " user
 
 ssh-keygen -t rsa -f $rsa_path
 
-echo "Before preceding, edit the yaml vars file to ADD your information. I would reccoment copy pasting an earlier host and then editing the data."
+echo "Before preceding, edit the yaml vars file and replace it with your information. I would reccomend copy pasting an earlier host and then editing the data."
 
 read -p "Once you are done this, hit enter to continue."
 
