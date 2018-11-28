@@ -2,10 +2,10 @@
 - hosts: raspberries
   tasks:
     - name: Collect sensor data
-      shell: "bash ~/sensor/main.py"
+      shell: "python ~/sensor/main.py"
 
     - name: Collect IP address
-      shell: "ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1 > ~/sensor_data/{{ inventory_hostname }}_ip"
+      shell: "ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1 > ~/sensor_data/ip"
 
     - name: Send data
-      shell: "bash send_data.sh"
+      shell: "bash ~/STEM-SLAM/raspberry_files/send_data.sh"

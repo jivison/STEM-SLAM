@@ -1,0 +1,13 @@
+{# Things that we need #}
+{# nickname #}
+{# IP #}
+{# IdentityFile #}
+{# user #}
+{# Sample host #}
+{% for _host in _hosts %}
+Host {{ _hosts.get(_host).get('nickname') }} {{ _hosts.get(_host).get('IP') }}
+    HostName {{ _hosts.get(_host).get('IP') }}
+    IdentityFile {{ _hosts.get(_host).get('IdentityFile') }}
+    User {{ _hosts.get(_host).get('User') }}
+
+{% endfor %}

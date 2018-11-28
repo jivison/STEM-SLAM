@@ -40,6 +40,8 @@ TO-DO:
 
 (1): Set up ansible file correctly
 
+(1.5): Set up passwordless ssh
+
 (2): Adjust jinja2 template and create script to return /just/ the IP address
     -ip4=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
 

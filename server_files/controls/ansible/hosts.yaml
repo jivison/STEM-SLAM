@@ -1,0 +1,29 @@
+---
+_hosts:
+   particle_pi: {
+   IP: 10.32.230.36, 
+   nickname: particle_pi,
+   IdentityFile: ~/.ssh/particle_pi_rsa, 
+   User: pi
+   }
+
+   sound_pi: {
+   IP: 10.32.230.38, 
+   nickname: sound_pi,
+   IdentityFile: ~/.ssh/sound_pi_rsa, 
+   User: pi
+   }
+
+   network_pi: {
+   IP: 10.32.230.39,
+   nickname: network_pi,
+   IdentityFile: ~/.ssh/network_pi_rsa,
+   User: pi
+   }
+
+   stem_server: {
+   IP: 10.32.230.37,
+   nickname: stem_server,
+   IdentityFile: ~/.ssh/id_rsa,
+   User: stem-server
+   }

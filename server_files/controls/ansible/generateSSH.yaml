@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+
+  vars:
+    host_dict: "{{ host_dict }}"
+
+  tasks:
+    - name: Generating ssh config file (@ ~/.ssh/config)
+      template:
+        src: /home/mattecatte/STEM-SLAM/server_files/controls/ansible/jinja/config.j2
+        dest: /home/mattecatte/STEM-SLAM/server_files/controls/ansible/config
+
+...
+
+# Run this with '-e "@hosts.yaml"'
