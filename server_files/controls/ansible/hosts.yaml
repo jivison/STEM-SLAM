@@ -27,3 +27,10 @@ _hosts:
    IdentityFile: ~/.ssh/id_rsa,
    User: stem-server
    }
+
+   test_server: {
+   IP: 10.32.230.40,
+   nickname: test,
+   IdentityFile: ~/.ssh/test_rsa,
+   User: testuser
+   }
