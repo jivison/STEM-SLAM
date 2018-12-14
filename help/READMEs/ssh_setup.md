@@ -195,3 +195,7 @@ Go back to the other terminal window again, and enter through the two prompts.
 
 It will prompt you for the Pi's password, it should be ```raspberry```.
 
+Then copy the generated config file by running:
+```bash
+cp ~/STEM-SLAM/server_files/controls/ansible/config ~/.ssh
+```
