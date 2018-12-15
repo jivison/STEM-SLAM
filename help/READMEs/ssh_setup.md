@@ -149,6 +149,8 @@ localhost                  : ok=2    changed=0    unreachable=0    failed=0
 
 You will now have to do this on the stem-server.
 
+Before doing this, you need to edit ```STEM-SLAM/server_files/controls/ansible/generateSSH.yaml``` and change /home/mattecatte to /home/pi where ever it appears.
+
 There, run the same ```bash ssh_setup.sh``` command, this time replacing all the ```/home/pi/``` with ```/home/stem-server/```s and ```stem_server_rsa``` with ```<your data type>_pi_rsa``` where <your data type> is your data type.
   
 When you get to the hostname and IP bit, enter ```pi``` for the hostname, and the IP of the Pi for the IP (this can be found by running ```hostname -I``` on the Pi).
@@ -199,3 +201,4 @@ Then copy the generated config file by running:
 ```bash
 cp ~/STEM-SLAM/server_files/controls/ansible/config ~/.ssh
 ```
+The final step is to ```nano``` into ~/STEM-SLAM/server_files/controls/ansible/SLAM-hosts and add your ip address and the ```ansible_user``` line. Follow the already existing examples if you're stuck.`
