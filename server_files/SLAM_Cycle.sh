@@ -1,8 +1,6 @@
 #!/bin/bash
 
-interval=600 #time interval between scans in seconds
-
-# This doesn't work
+interval=300 #time interval between scans in seconds
 
 while :
 do
@@ -11,31 +9,16 @@ do
 
     echo "Executing scripts"
 
-    for dir in "$@"; do
-        
-        cd $dir
+    ansible-playbook -i /home/stem-server/STEM-SLAM/server_files/controls/ansible/SLAM-hosts /home/stem-server/STEM-SLAM/server_files/controls/ansible/gatherData.yaml
 
-        python3 main.py &
-
-    done
-
-    wait
-
-    echo "Sending data"
-
-    # data_dir="/home/mattecatte/STEM-SLAM/data/json"
-    # remotehost="10.32.230.37"
-
-    # rsync -avz -e 'ssh' $data_dir stem-server@$remotehost:/home/stem-server/SLAM_Data
-
-    cd /home/mattecatte/STEM-SLAM/server_files/data/
+    cd /home/stem-server/STEM-SLAM/server_files/data/
     # Adding data to flat file database
-    python3 add_json_to_csv.py
+    python3 /home/stem-server/STEM-SLAM/server_files/data/add_JSON_to_database.py
 
     # Jank, don't worry about it
 
-    echo "#comment" >> /home/mattecatte/STEM-SLAM/server_files/data/visuals/generate_visuals.py
-    sed -i '$ d' /home/mattecatte/STEM-SLAM/server_files/data/visuals/generate_visuals.py
+    echo "#comment" >> /home/stem-server/STEM-SLAM/server_files/data/visuals/generate_visuals.py
+    sed -i '$ d' /home/stem-server/STEM-SLAM/server_files/data/visuals/generate_visuals.py
 
     echo "Wating $interval seconds"
 

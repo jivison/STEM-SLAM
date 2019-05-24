@@ -7,8 +7,8 @@
   tasks:
     - name: Generating ssh config file (@ ~/.ssh/config)
       template:
-        src: /home/mattecatte/STEM-SLAM/server_files/controls/ansible/jinja/config.j2
-        dest: /home/mattecatte/STEM-SLAM/server_files/controls/ansible/config
+        src: /home/stem-server/STEM-SLAM/server_files/controls/ansible/jinja/config.j2
+        dest: /home/stem-server/STEM-SLAM/server_files/controls/ansible/config
 
 
 ...

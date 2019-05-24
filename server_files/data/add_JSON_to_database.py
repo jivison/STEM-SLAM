@@ -11,11 +11,11 @@ data = {}
 
 processed_sensors = []
 
-for file in os.listdir("/home/mattecatte/STEM-SLAM/server_files/data/json/"):
+for file in os.listdir("/home/stem-server/SLAM_Data/"):
     if not file.endswith(".json"):
         print(f'WARNING: Non JSON file in json/ directory ({file})')
     else:
-        with open(f'/home/mattecatte/STEM-SLAM/server_files/data/json/{file}', "r") as jsonfile:
+        with open(f'/home/stem-server/SLAM_Data/{file}', "r") as jsonfile:
 
             j = json.load(jsonfile)
 
@@ -27,7 +27,7 @@ print(f'\nProcessed sensors: {processed_sensors}')
 
 fieldnames = []
 
-with open("database.csv", "a+") as csvfile:
+with open("/home/stem-server/STEM-SLAM/server_files/data/database.csv", "a+") as csvfile:
 
     reader = csv.DictReader(csvfile)
 

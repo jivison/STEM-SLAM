@@ -1,25 +1,10 @@
-Host sound_pi 10.32.230.38
-    HostName 10.32.230.38
-    IdentityFile ~/.ssh/sound_pi_rsa
+Host networkdetails_pi 10.32.229.139
+    HostName 10.32.229.139
+    IdentityFile ~/.ssh/networkdetails_pi_rsa
     User pi
 
-Host network_pi 10.32.230.39
-    HostName 10.32.230.39
-    IdentityFile ~/.ssh/network_pi_rsa
-    User pi
-
-Host particle_pi 10.32.230.36
-    HostName 10.32.230.36
+Host particle_pi 10.32.230.20
+    HostName 10.32.230.20
     IdentityFile ~/.ssh/particle_pi_rsa
     User pi
-
-Host stem_server 10.32.230.37
-    HostName 10.32.230.37
-    IdentityFile ~/.ssh/id_rsa
-    User stem-server
-
-Host test 10.32.230.40
-    HostName 10.32.230.40
-    IdentityFile ~/.ssh/test_rsa
-    User testuser
 

@@ -1,2 +1,2 @@
 [raspberries]
-10.32.229.227 ansible_user=pi
+10.32.227.236 ansible_user=pi

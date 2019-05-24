@@ -4,3 +4,6 @@
 # Temp files that are annoying
 *.log
 *.log.backup
+
+#Ignore the database file
+*.csv
