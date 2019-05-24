@@ -3,6 +3,11 @@
 
 ### _Just a note that to paste into terminal, use &nbsp;```CTRL + SHIFT + V``` instead of &nbsp;```CTRL + V```_
 
+The first step is to install ansible, which is used to generate the template. Do this by typing: 
+```bash
+sudo apt-get install ansible
+```
+
 Run the file using 
 ```bash
 bash ssh_setup.sh
@@ -75,14 +80,24 @@ After spitting out a bunch of garbage, including a cool randomart image, it'll a
 Are you sure?!
 ```
 
+### __Next prompt:__
+
+It will prompt you for the password to stem-server@10.32.230.37.
+The password is 'password' (_very secure_).
+
+If this is successful, you are almost done.
+
 It'll then spit out more stuff. Here's where the errors could happen. If the files you entered in earlier weren't good, it'll produce a big wall of red text. Other wise, you should see some green and yellow text and then 
 ```bash
 'SSH set up on this machine with the target host and user: $user@$host'
 ```
 
+### __Next step:__
 
-
-
+The next step is to copy the generated config file to the ```.ssh``` directory. Do this by typing in:
+```bash
+cp ~/STEM-SLAM/server_files/controls/ansible/config ~/.ssh
+```
 
 ## Sample runthrough
 
@@ -132,4 +147,58 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=2    changed=0    unreachable=0    failed=0   
 ```
 
+You will now have to do this on the stem-server.
 
+Before doing this, you need to edit ```STEM-SLAM/server_files/controls/ansible/generateSSH.yaml``` and change /home/mattecatte to /home/pi where ever it appears.
+
+There, run the same ```bash ssh_setup.sh``` command, this time replacing all the ```/home/pi/``` with ```/home/stem-server/```s and ```stem_server_rsa``` with ```<your data type>_pi_rsa``` where <your data type> is your data type.
+  
+When you get to the hostname and IP bit, enter ```pi``` for the hostname, and the IP of the Pi for the IP (this can be found by running ```hostname -I``` on the Pi).
+
+When the ```Before preceding (should be proceding), edit the yaml vars file [...]``` shows up, open a new terminal window and ```cd``` into ```~/STEM-SLAM/server_files/controls/ansible/```. Edit the vars file by typing in ```nano server_host.yaml```. The file should look like this:
+```yaml
+---
+_hosts:
+   stem_server: {
+   IP: 10.32.230.37,  #Your IP address here 
+   nickname: stem_server,
+   IdentityFile: ~/.ssh/stem_server_rsa, 
+   User: stem-server
+   }
+```
+
+Copy this:
+```yaml
+   stem_server: {
+   IP: 10.32.230.37,  #Your IP address here 
+   nickname: stem_server,
+   IdentityFile: ~/.ssh/stem_server_rsa, 
+   User: stem-server
+   }
+```
+and paste it below what already exists.
+
+Then, change the following (in the one you copy pasted):
+You can look at what already exists to guide you.
+
+```stem_server: {``` : Change stem-server to <your data type>_pi (the same one you used above without the trailing ```_rsa```).
+  
+```IP:``` : Change 10.32.230.37 to the IP of the Pi, which you found earlier.
+
+```nickname:``` : Change this to the same thing you put for the first line (instead of stem_server).
+
+```IdentityFile: ``` : Change the ```stem_server_rsa``` to ```<your data type>_pi_rsa```.
+
+```User: ``` : Change ```stem-server``` to ```pi```.
+  
+Hit ```CTRL + X``` to exit, make sure to save the document when exiting (it will prompt you).
+
+Go back to the other terminal window again, and enter through the two prompts.
+
+It will prompt you for the Pi's password, it should be ```raspberry```.
+
+Then copy the generated config file by running:
+```bash
+cp ~/STEM-SLAM/server_files/controls/ansible/config ~/.ssh
+```
+The final step is to ```nano``` into ~/STEM-SLAM/server_files/controls/ansible/SLAM-hosts and add your ip address and the ```ansible_user``` line. Follow the already existing examples if you're stuck.`
